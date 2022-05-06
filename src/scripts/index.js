@@ -1,2 +1,6 @@
-import style from '../styles/style.css'
-console.log(style)
+
+let lang = window.localStorage.getItem("lang") ? window.localStorage.getItem("lang") : window.localStorage.setItem("lang", 'en');
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log('DOM fully loaded and parsed');
+});

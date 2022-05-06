@@ -5,13 +5,107 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/style.css">
   <title>Virtual keyboard</title>
 </head>
 
 <body>
-  <div class="main">
-    <h1>Virtual keyboard</h1>
+  <div class="wrapper">
+    <div class="_container">
+      <h1 class="prompt">Type in some text:</h1>
+      <div class="textarea textarea__container">
+        <textarea class="textarea__field" name="field" id="textarea" autofocus></textarea>
+        <button class="button button__reset"></button>
+      </div>
+      <div class="keyboard">
+        <div class="keyboard__wrapper">
+          <div class="keyboard__row">
+            <button class="keyboard__key keyboard__key--standard">ё</button>
+            <button class="keyboard__key keyboard__key--standard">1</button>
+            <button class="keyboard__key keyboard__key--standard">2</button>
+            <button class="keyboard__key keyboard__key--standard">3</button>
+            <button class="keyboard__key keyboard__key--standard">4</button>
+            <button class="keyboard__key keyboard__key--standard">5</button>
+            <button class="keyboard__key keyboard__key--standard">6</button>
+            <button class="keyboard__key keyboard__key--standard">7</button>
+            <button class="keyboard__key keyboard__key--standard">8</button>
+            <button class="keyboard__key keyboard__key--standard">9</button>
+            <button class="keyboard__key keyboard__key--standard">0</button>
+            <button class="keyboard__key keyboard__key--standard">-</button>
+            <button class="keyboard__key keyboard__key--standard">+</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--backspace">Backspace</button>
+          </div>
+          <div class="keyboard__row">
+            <button class="keyboard__key keyboard__key--special keyboard__key--tab">Tab</button>
+
+            <button class="keyboard__key keyboard__key--standard">й</button>
+            <button class="keyboard__key keyboard__key--standard">ц</button>
+            <button class="keyboard__key keyboard__key--standard">у</button>
+            <button class="keyboard__key keyboard__key--standard">к</button>
+            <button class="keyboard__key keyboard__key--standard">е</button>
+            <button class="keyboard__key keyboard__key--standard">y</button>
+            <button class="keyboard__key keyboard__key--standard">u</button>
+            <button class="keyboard__key keyboard__key--standard">i</button>
+            <button class="keyboard__key keyboard__key--standard">o</button>
+            <button class="keyboard__key keyboard__key--standard">p</button>
+            <button class="keyboard__key keyboard__key--standard">[</button>
+            <button class="keyboard__key keyboard__key--standard">]</button>
+
+            <button class="keyboard__key keyboard__key--special keyboard__key--del">Del</button>
+          </div>
+          <div class="keyboard__row">
+            <button class="keyboard__key keyboard__key--special keyboard__key--tab keyboard__key--active">Caps
+              Lock</button>
+
+            <button class="keyboard__key keyboard__key--standard">ф</button>
+            <button class="keyboard__key keyboard__key--standard">ы</button>
+            <button class="keyboard__key keyboard__key--standard">в</button>
+            <button class="keyboard__key keyboard__key--standard">а</button>
+            <button class="keyboard__key keyboard__key--standard">п</button>
+            <button class="keyboard__key keyboard__key--standard">h</button>
+            <button class="keyboard__key keyboard__key--standard">j</button>
+            <button class="keyboard__key keyboard__key--standard">k</button>
+            <button class="keyboard__key keyboard__key--standard">l</button>
+            <button class="keyboard__key keyboard__key--standard">;</button>
+            <button class="keyboard__key keyboard__key--standard">'</button>
+
+            <button class="keyboard__key keyboard__key--special keyboard__key--enter">Enter</button>
+          </div>
+          <div class="keyboard__row">
+            <button class="keyboard__key keyboard__key--special keyboard__key--shift">Shift</button>
+
+            <button class="keyboard__key keyboard__key--standard">я</button>
+            <button class="keyboard__key keyboard__key--standard">ч</button>
+            <button class="keyboard__key keyboard__key--standard">с</button>
+            <button class="keyboard__key keyboard__key--standard">м</button>
+            <button class="keyboard__key keyboard__key--standard">и</button>
+            <button class="keyboard__key keyboard__key--standard">т</button>
+            <button class="keyboard__key keyboard__key--standard">m</button>
+            <button class="keyboard__key keyboard__key--standard">,</button>
+            <button class="keyboard__key keyboard__key--standard">.</button>
+            <button class="keyboard__key keyboard__key--standard">/</button>
+
+            <button class="keyboard__key keyboard__key--special keyboard__key--arr">&uarr;</button>
+            <button
+              class="keyboard__key keyboard__key--special keyboard__key--shift keyboard__key--shift-right">Shift</button>
+          </div>
+          <div class="keyboard__row">
+            <button class="keyboard__key keyboard__key--special keyboard__key--ctrl">Ctrl</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--tab">Win</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--alt">Alt</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--space">&mdash;</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--alt">Alt</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--ctrl">Ctrl</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--arr">&larr;</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--arr">&darr;</button>
+            <button class="keyboard__key keyboard__key--special keyboard__key--arr">&rarr;</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
+  <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>
