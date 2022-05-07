@@ -431,7 +431,7 @@ a {
   margin: 0 auto;
   padding: 0 40px;
 }
-._container > *:not(:last-child) {
+._container > * {
   margin-bottom: 20px;
 }
 
@@ -458,7 +458,7 @@ a {
   max-width: 100%;
   min-height: 50px;
   padding: 5px;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", sans-serif;
   font-size: 20px;
   font-weight: bold;
   background: transparent;
@@ -480,7 +480,7 @@ a {
   background-color: #ededed;
 }
 .button__reset:active {
-  border: 1px solid #757575;
+  border: 1px solid #afafaf;
 }
 .button__reset::before, .button__reset::after {
   content: "";
@@ -526,7 +526,7 @@ a {
 .keyboard__key {
   height: 50px;
   padding: 5px;
-  font-family: "Fira Sans";
+  font-family: "Fira Sans", sans-serif;
   font-weight: 500;
   box-shadow: 0 3px 0px #808080;
   border-radius: 7px;
@@ -599,6 +599,26 @@ a {
   max-width: 380px;
   flex-grow: 1;
   background-color: #877974;
+}
+
+.caption {
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 86, 34, 0.15);
+}
+.caption__text {
+  font-family: "Inconsolata", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+code {
+  padding: 5px;
+  border-radius: 10px;
+  color: #ff6d88;
+  background-color: rgb(251, 221, 212);
 }
 
 /*# sourceMappingURL=style.css.map */

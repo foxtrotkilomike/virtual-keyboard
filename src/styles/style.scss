@@ -42,7 +42,7 @@ a {
   margin: 0 auto;
   padding: 0 40px;
 
-  > *:not(:last-child) {
+  > * {
     margin-bottom: 20px;
   }
 }
@@ -73,7 +73,7 @@ a {
     min-height: 50px;
     padding: 5px;
 
-    font-family: $main-font;
+    font-family: $main-font, sans-serif;
     font-size: 20px;
     font-weight: bold;
 
@@ -100,7 +100,7 @@ a {
     background-color: #ededed;
 
     &:active {
-      border: 1px solid #757575;
+      border: 1px solid #afafaf;
     }
 
     &::before,
@@ -161,7 +161,7 @@ a {
     height: 50px;
     padding: 5px;
 
-    font-family: $keycaps-font;
+    font-family: $keycaps-font, sans-serif;
     font-weight: 500;
 
     box-shadow: 0 3px 0px #808080;
@@ -256,6 +256,27 @@ a {
 
     background-color: $color-stone;
   }
+}
+
+.caption {
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 86, 34, 0.15);
+
+  &__text {
+    font-family: $main-font, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+code {
+  padding: 5px;
+  border-radius: 10px;
+  color: #ff6d88;
+  background-color: rgba(251, 221, 212, 1);
 }
 
 // sass --watch src/styles/style.scss src/styles/style.css
