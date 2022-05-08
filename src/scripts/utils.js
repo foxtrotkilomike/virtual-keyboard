@@ -20,27 +20,26 @@ export function createElement(type, className, textContent, attributes) {
 }
 
 export function changeKeyboardLayout(keyboard) {
-  keyboard.rows.forEach((row, rowIndex) => {
-    row.childNodes.forEach((key, keyIndex) => {
-      const keyObj = keyboard.keys[rowIndex][keyIndex];
-      key.textContent = keyObj.label || keyObj.value[keyboard.lang];
-    });
+  Object.keys(keyboard.keys).forEach((key) => {
+    keyboard.keys[key].element.textContent = keyboard.keys[key].label
+                                            || keyboard.keys[key].value[keyboard.lang];
   });
 }
 
-function makeKeyboardRows(lang, keysArr) {
-  return keysArr.map((row) => {
-    const keyboardRowElement = createElement('div', ['keyboard__row']);
-    const keysElementsArray = row.map((keyObj) => {
-      const keyElement = Key(keyObj);
-      keyElement.textContent = keyObj.label || keyObj.value[lang];
+function makeKeyboardRows(keyboard) {
+  const keyboardRows = [];
+  for (let i = 0; i < 5; i += 1) {
+    keyboardRows.push(createElement('div', ['keyboard__row']));
+  }
 
-      return keyElement;
-    });
-    keyboardRowElement.append(...keysElementsArray);
-
-    return keyboardRowElement;
+  Object.keys(keyboard.keys).forEach((key) => {
+    const keyElement = Key(key, keyboard.keys[key]);
+    keyElement.textContent = keyboard.keys[key].label || keyboard.keys[key].value[keyboard.lang];
+    keyboard.keys[key].element = keyElement;
+    keyboardRows[keyboard.keys[key].row].append(keyElement);
   });
+
+  return keyboardRows;
 }
 
 export function makePage(keyboard) {
@@ -54,8 +53,7 @@ export function makePage(keyboard) {
 
   const keyboardContainer = createElement('div', ['keyboard']);
   const keyboardRowsWrapper = createElement('div', ['keyboard__wrapper']);
-  const keyboardRows = makeKeyboardRows(keyboard.lang, keyboard.keys);
-  keyboard.rows = keyboardRows;
+  const keyboardRows = makeKeyboardRows(keyboard);
   changeKeyboardLayout(keyboard);
 
   const caption = createElement('div', ['caption']);

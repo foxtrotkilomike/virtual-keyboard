@@ -5,7 +5,7 @@ export class Keyboard {
 
   keys = {
     Backquote: {
-      row: 1,
+      row: 0,
       value: {
         en: '`',
         ru: 'ё',
@@ -16,7 +16,7 @@ export class Keyboard {
       },
     },
     Digit1: {
-      row: 1,
+      row: 0,
       value: {
         en: '1',
         ru: '1',
@@ -27,7 +27,7 @@ export class Keyboard {
       },
     },
     Digit2: {
-      row: 1,
+      row: 0,
       value: {
         en: '2',
         ru: '2',
@@ -38,7 +38,7 @@ export class Keyboard {
       },
     },
     Digit3: {
-      row: 1,
+      row: 0,
       value: {
         en: '3',
         ru: '3',
@@ -49,7 +49,7 @@ export class Keyboard {
       },
     },
     Digit4: {
-      row: 1,
+      row: 0,
       value: {
         en: '4',
         ru: '4',
@@ -60,7 +60,7 @@ export class Keyboard {
       },
     },
     Digit5: {
-      row: 1,
+      row: 0,
       value: {
         en: '5',
         ru: '5',
@@ -71,7 +71,7 @@ export class Keyboard {
       },
     },
     Digit6: {
-      row: 1,
+      row: 0,
       value: {
         en: '6',
         ru: '6',
@@ -82,7 +82,7 @@ export class Keyboard {
       },
     },
     Digit7: {
-      row: 1,
+      row: 0,
       value: {
         en: '7',
         ru: '7',
@@ -93,7 +93,7 @@ export class Keyboard {
       },
     },
     Digit8: {
-      row: 1,
+      row: 0,
       value: {
         en: '8',
         ru: '8',
@@ -104,7 +104,7 @@ export class Keyboard {
       },
     },
     Digit9: {
-      row: 1,
+      row: 0,
       value: {
         en: '9',
         ru: '9',
@@ -115,7 +115,7 @@ export class Keyboard {
       },
     },
     Digit0: {
-      row: 1,
+      row: 0,
       value: {
         en: '0',
         ru: '0',
@@ -126,7 +126,7 @@ export class Keyboard {
       },
     },
     Minus: {
-      row: 1,
+      row: 0,
       value: {
         en: '-',
         ru: '-',
@@ -137,7 +137,7 @@ export class Keyboard {
       },
     },
     Equal: {
-      row: 1,
+      row: 0,
       value: {
         en: '=',
         ru: '=',
@@ -148,7 +148,7 @@ export class Keyboard {
       },
     },
     Backspace: {
-      row: 1,
+      row: 0,
       value: {
         en: '',
         ru: '',
@@ -161,7 +161,7 @@ export class Keyboard {
     },
 
     Tab: {
-      row: 2,
+      row: 1,
       value: {
         en: '\t',
         ru: '\t',
@@ -173,7 +173,7 @@ export class Keyboard {
       },
     },
     KeyQ: {
-      row: 2,
+      row: 1,
       value: {
         en: 'q',
         ru: 'й',
@@ -184,7 +184,7 @@ export class Keyboard {
       },
     },
     KeyW: {
-      row: 2,
+      row: 1,
       value: {
         en: 'w',
         ru: 'ц',
@@ -195,7 +195,7 @@ export class Keyboard {
       },
     },
     KeyE: {
-      row: 2,
+      row: 1,
       value: {
         en: 'e',
         ru: 'у',
@@ -206,7 +206,7 @@ export class Keyboard {
       },
     },
     KeyR: {
-      row: 2,
+      row: 1,
       value: {
         en: 'r',
         ru: 'к',
@@ -217,7 +217,7 @@ export class Keyboard {
       },
     },
     KeyT: {
-      row: 2,
+      row: 1,
       value: {
         en: 't',
         ru: 'е',
@@ -228,7 +228,7 @@ export class Keyboard {
       },
     },
     KeyY: {
-      row: 2,
+      row: 1,
       value: {
         en: 'y',
         ru: 'н',
@@ -239,7 +239,7 @@ export class Keyboard {
       },
     },
     KeyU: {
-      row: 2,
+      row: 1,
       value: {
         en: 'u',
         ru: 'г',
@@ -250,7 +250,7 @@ export class Keyboard {
       },
     },
     KeyI: {
-      row: 2,
+      row: 1,
       value: {
         en: 'i',
         ru: 'ш',
@@ -261,7 +261,7 @@ export class Keyboard {
       },
     },
     KeyO: {
-      row: 2,
+      row: 1,
       value: {
         en: 'o',
         ru: 'щ',
@@ -272,7 +272,7 @@ export class Keyboard {
       },
     },
     KeyP: {
-      row: 2,
+      row: 1,
       value: {
         en: 'p',
         ru: 'з',
@@ -283,7 +283,7 @@ export class Keyboard {
       },
     },
     BracketLeft: {
-      row: 2,
+      row: 1,
       value: {
         en: '[',
         ru: 'х',
@@ -294,7 +294,7 @@ export class Keyboard {
       },
     },
     BracketRight: {
-      row: 2,
+      row: 1,
       value: {
         en: ']',
         ru: 'ъ',
@@ -305,7 +305,7 @@ export class Keyboard {
       },
     },
     Delete: {
-      row: 2,
+      row: 1,
       value: {
         en: '',
         ru: '',
@@ -318,7 +318,7 @@ export class Keyboard {
     },
 
     CapsLock: {
-      row: 3,
+      row: 2,
       value: {
         en: '',
         ru: '',
@@ -330,7 +330,7 @@ export class Keyboard {
       },
     },
     KeyA: {
-      row: 3,
+      row: 2,
       value: {
         en: 'a',
         ru: 'ф',
@@ -341,7 +341,7 @@ export class Keyboard {
       },
     },
     KeyS: {
-      row: 3,
+      row: 2,
       value: {
         en: 's',
         ru: 'ы',
@@ -352,7 +352,7 @@ export class Keyboard {
       },
     },
     KeyD: {
-      row: 3,
+      row: 2,
       value: {
         en: 'd',
         ru: 'в',
@@ -363,7 +363,7 @@ export class Keyboard {
       },
     },
     KeyF: {
-      row: 3,
+      row: 2,
       value: {
         en: 'f',
         ru: 'а',
@@ -374,7 +374,7 @@ export class Keyboard {
       },
     },
     KeyG: {
-      row: 3,
+      row: 2,
       value: {
         en: 'g',
         ru: 'п',
@@ -385,7 +385,7 @@ export class Keyboard {
       },
     },
     KeyH: {
-      row: 3,
+      row: 2,
       value: {
         en: 'h',
         ru: 'р',
@@ -396,7 +396,7 @@ export class Keyboard {
       },
     },
     KeyJ: {
-      row: 3,
+      row: 2,
       value: {
         en: 'j',
         ru: 'о',
@@ -407,7 +407,7 @@ export class Keyboard {
       },
     },
     KeyK: {
-      row: 3,
+      row: 2,
       value: {
         en: 'k',
         ru: 'л',
@@ -418,7 +418,7 @@ export class Keyboard {
       },
     },
     KeyL: {
-      row: 3,
+      row: 2,
       value: {
         en: 'l',
         ru: 'д',
@@ -429,7 +429,7 @@ export class Keyboard {
       },
     },
     Semicolon: {
-      row: 3,
+      row: 2,
       value: {
         en: ';',
         ru: 'ж',
@@ -440,7 +440,7 @@ export class Keyboard {
       },
     },
     Quote: {
-      row: 3,
+      row: 2,
       value: {
         en: "'",
         ru: 'э',
@@ -451,7 +451,7 @@ export class Keyboard {
       },
     },
     Enter: {
-      row: 3,
+      row: 2,
       value: {
         en: '',
         ru: '',
@@ -464,7 +464,7 @@ export class Keyboard {
     },
 
     ShiftLeft: {
-      row: 4,
+      row: 3,
       value: {
         en: '',
         ru: '',
@@ -476,7 +476,7 @@ export class Keyboard {
       },
     },
     KeyZ: {
-      row: 4,
+      row: 3,
       value: {
         en: 'z',
         ru: 'я',
@@ -487,7 +487,7 @@ export class Keyboard {
       },
     },
     KeyX: {
-      row: 4,
+      row: 3,
       value: {
         en: 'x',
         ru: 'ч',
@@ -498,7 +498,7 @@ export class Keyboard {
       },
     },
     KeyC: {
-      row: 4,
+      row: 3,
       value: {
         en: 'c',
         ru: 'с',
@@ -509,7 +509,7 @@ export class Keyboard {
       },
     },
     KeyV: {
-      row: 4,
+      row: 3,
       value: {
         en: 'v',
         ru: 'м',
@@ -520,7 +520,7 @@ export class Keyboard {
       },
     },
     KeyB: {
-      row: 4,
+      row: 3,
       value: {
         en: 'b',
         ru: 'и',
@@ -531,7 +531,7 @@ export class Keyboard {
       },
     },
     KeyN: {
-      row: 4,
+      row: 3,
       value: {
         en: 'n',
         ru: 'т',
@@ -542,7 +542,7 @@ export class Keyboard {
       },
     },
     KeyM: {
-      row: 4,
+      row: 3,
       value: {
         en: 'm',
         ru: 'ь',
@@ -553,7 +553,7 @@ export class Keyboard {
       },
     },
     Comma: {
-      row: 4,
+      row: 3,
       value: {
         en: ',',
         ru: 'б',
@@ -564,7 +564,7 @@ export class Keyboard {
       },
     },
     Period: {
-      row: 4,
+      row: 3,
       value: {
         en: '.',
         ru: 'ю',
@@ -575,7 +575,7 @@ export class Keyboard {
       },
     },
     Slash: {
-      row: 4,
+      row: 3,
       value: {
         en: '/',
         ru: '.',
@@ -586,7 +586,7 @@ export class Keyboard {
       },
     },
     ArrowUp: {
-      row: 4,
+      row: 3,
       value: {
         en: '',
         ru: '',
@@ -598,7 +598,7 @@ export class Keyboard {
       },
     },
     ShiftRight: {
-      row: 4,
+      row: 3,
       value: {
         en: '',
         ru: '',
@@ -611,7 +611,7 @@ export class Keyboard {
     },
 
     ControlLeft: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -623,7 +623,7 @@ export class Keyboard {
       },
     },
     Win: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -635,7 +635,7 @@ export class Keyboard {
       },
     },
     AltLeft: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -647,7 +647,7 @@ export class Keyboard {
       },
     },
     Space: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -659,7 +659,7 @@ export class Keyboard {
       },
     },
     AltRight: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -671,7 +671,7 @@ export class Keyboard {
       },
     },
     ControlRight: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -683,7 +683,7 @@ export class Keyboard {
       },
     },
     ArrowLeft: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -695,7 +695,7 @@ export class Keyboard {
       },
     },
     ArrowDown: {
-      row: 5,
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -706,8 +706,8 @@ export class Keyboard {
         ru: '',
       },
     },
-    ArrowRight:{
-      row: 5,
+    ArrowRight: {
+      row: 4,
       value: {
         en: '',
         ru: '',
@@ -718,16 +718,16 @@ export class Keyboard {
         ru: '',
       },
     },
-  }
+  };
 }
 
-export function Key(keyObj) {
+export function Key(code, keyObj) {
   const classList = ['keyboard__key'];
   if (keyObj.label) {
     classList.push('keyboard__key--special');
   }
 
-  switch (keyObj.code) {
+  switch (code) {
     case 'Backspace':
       classList.push('keyboard__key--backspace');
       break;
@@ -754,8 +754,8 @@ export function Key(keyObj) {
       classList.push('keyboard__key--shift', 'keyboard__key--shift-right');
       break;
 
-    case 'CtrlLeft':
-    case 'CtrlRight':
+    case 'ControlLeft':
+    case 'ControlRight':
       classList.push('keyboard__key--ctrl');
       break;
 

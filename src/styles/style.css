@@ -539,6 +539,9 @@ a {
   transform: translateY(4px);
   box-shadow: none;
 }
+.keyboard__key--highlight {
+  background-color: #fdf116 !important;
+}
 .keyboard__key--toggled {
   color: #fff;
   text-shadow: 0 0 5px #ddd;
