@@ -3,730 +3,722 @@ export class Keyboard {
     this.lang = lang;
   }
 
-  rows = null;
+  keys = {
+    Backquote: {
+      row: 1,
+      value: {
+        en: '`',
+        ru: 'ё',
+      },
+      shiftedValue: {
+        en: '~',
+        ru: 'Ё',
+      },
+    },
+    Digit1: {
+      row: 1,
+      value: {
+        en: '1',
+        ru: '1',
+      },
+      shiftedValue: {
+        en: '!',
+        ru: '!',
+      },
+    },
+    Digit2: {
+      row: 1,
+      value: {
+        en: '2',
+        ru: '2',
+      },
+      shiftedValue: {
+        en: '@',
+        ru: '"',
+      },
+    },
+    Digit3: {
+      row: 1,
+      value: {
+        en: '3',
+        ru: '3',
+      },
+      shiftedValue: {
+        en: '#',
+        ru: '№',
+      },
+    },
+    Digit4: {
+      row: 1,
+      value: {
+        en: '4',
+        ru: '4',
+      },
+      shiftedValue: {
+        en: '$',
+        ru: ';',
+      },
+    },
+    Digit5: {
+      row: 1,
+      value: {
+        en: '5',
+        ru: '5',
+      },
+      shiftedValue: {
+        en: '%',
+        ru: '%',
+      },
+    },
+    Digit6: {
+      row: 1,
+      value: {
+        en: '6',
+        ru: '6',
+      },
+      shiftedValue: {
+        en: '^',
+        ru: ':',
+      },
+    },
+    Digit7: {
+      row: 1,
+      value: {
+        en: '7',
+        ru: '7',
+      },
+      shiftedValue: {
+        en: '&',
+        ru: '?',
+      },
+    },
+    Digit8: {
+      row: 1,
+      value: {
+        en: '8',
+        ru: '8',
+      },
+      shiftedValue: {
+        en: '*',
+        ru: '*',
+      },
+    },
+    Digit9: {
+      row: 1,
+      value: {
+        en: '9',
+        ru: '9',
+      },
+      shiftedValue: {
+        en: '(',
+        ru: '(',
+      },
+    },
+    Digit0: {
+      row: 1,
+      value: {
+        en: '0',
+        ru: '0',
+      },
+      shiftedValue: {
+        en: ')',
+        ru: ')',
+      },
+    },
+    Minus: {
+      row: 1,
+      value: {
+        en: '-',
+        ru: '-',
+      },
+      shiftedValue: {
+        en: '_',
+        ru: '_',
+      },
+    },
+    Equal: {
+      row: 1,
+      value: {
+        en: '=',
+        ru: '=',
+      },
+      shiftedValue: {
+        en: '+',
+        ru: '+',
+      },
+    },
+    Backspace: {
+      row: 1,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Backspace',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
 
-  keys = [
-    [
-      {
-        value: {
-          en: '`',
-          ru: 'ё',
-        },
-        code: 'Backquote',
-        shiftedValue: {
-          en: '~',
-          ru: 'Ё',
-        },
+    Tab: {
+      row: 2,
+      value: {
+        en: '\t',
+        ru: '\t',
       },
-      {
-        value: {
-          en: '1',
-          ru: '1',
-        },
-        code: 'Digit1',
-        shiftedValue: {
-          en: '!',
-          ru: '!',
-        },
+      label: 'Tab',
+      shiftedValue: {
+        en: '\t',
+        ru: '\t',
       },
-      {
-        value: {
-          en: '2',
-          ru: '2',
-        },
-        code: 'Digit2',
-        shiftedValue: {
-          en: '@',
-          ru: '"',
-        },
+    },
+    KeyQ: {
+      row: 2,
+      value: {
+        en: 'q',
+        ru: 'й',
       },
-      {
-        value: {
-          en: '3',
-          ru: '3',
-        },
-        code: 'Digit3',
-        shiftedValue: {
-          en: '#',
-          ru: '№',
-        },
+      shiftedValue: {
+        en: 'Q',
+        ru: 'Й',
       },
-      {
-        value: {
-          en: '4',
-          ru: '4',
-        },
-        code: 'Digit4',
-        shiftedValue: {
-          en: '$',
-          ru: ';',
-        },
+    },
+    KeyW: {
+      row: 2,
+      value: {
+        en: 'w',
+        ru: 'ц',
       },
-      {
-        value: {
-          en: '5',
-          ru: '5',
-        },
-        code: 'Digit5',
-        shiftedValue: {
-          en: '%',
-          ru: '%',
-        },
+      shiftedValue: {
+        en: 'W',
+        ru: 'Ц',
       },
-      {
-        value: {
-          en: '6',
-          ru: '6',
-        },
-        code: 'Digit6',
-        shiftedValue: {
-          en: '^',
-          ru: ':',
-        },
+    },
+    KeyE: {
+      row: 2,
+      value: {
+        en: 'e',
+        ru: 'у',
       },
-      {
-        value: {
-          en: '7',
-          ru: '7',
-        },
-        code: 'Digit7',
-        shiftedValue: {
-          en: '&',
-          ru: '?',
-        },
+      shiftedValue: {
+        en: 'E',
+        ru: 'У',
       },
-      {
-        value: {
-          en: '8',
-          ru: '8',
-        },
-        code: 'Digit8',
-        shiftedValue: {
-          en: '*',
-          ru: '*',
-        },
+    },
+    KeyR: {
+      row: 2,
+      value: {
+        en: 'r',
+        ru: 'к',
       },
-      {
-        value: {
-          en: '9',
-          ru: '9',
-        },
-        code: 'Digit9',
-        shiftedValue: {
-          en: '(',
-          ru: '(',
-        },
+      shiftedValue: {
+        en: 'R',
+        ru: 'К',
       },
-      {
-        value: {
-          en: '0',
-          ru: '0',
-        },
-        code: 'Digit0',
-        shiftedValue: {
-          en: ')',
-          ru: ')',
-        },
+    },
+    KeyT: {
+      row: 2,
+      value: {
+        en: 't',
+        ru: 'е',
       },
-      {
-        value: {
-          en: '-',
-          ru: '-',
-        },
-        code: 'Minus',
-        shiftedValue: {
-          en: '_',
-          ru: '_',
-        },
+      shiftedValue: {
+        en: 'T',
+        ru: 'Е',
       },
-      {
-        value: {
-          en: '=',
-          ru: '=',
-        },
-        code: 'Equal',
-        shiftedValue: {
-          en: '+',
-          ru: '+',
-        },
+    },
+    KeyY: {
+      row: 2,
+      value: {
+        en: 'y',
+        ru: 'н',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Backspace',
-        code: 'Backspace',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      shiftedValue: {
+        en: 'Y',
+        ru: 'Н',
       },
-    ],
-    [
-      {
-        value: {
-          en: '\t',
-          ru: '\t',
-        },
-        label: 'Tab',
-        code: 'Tab',
-        shiftedValue: {
-          en: '\t',
-          ru: '\t',
-        },
+    },
+    KeyU: {
+      row: 2,
+      value: {
+        en: 'u',
+        ru: 'г',
       },
-      {
-        value: {
-          en: 'q',
-          ru: 'й',
-        },
-        code: 'KeyQ',
-        shiftedValue: {
-          en: 'Q',
-          ru: 'Й',
-        },
+      shiftedValue: {
+        en: 'U',
+        ru: 'Г',
       },
-      {
-        value: {
-          en: 'w',
-          ru: 'ц',
-        },
-        code: 'KeyW',
-        shiftedValue: {
-          en: 'W',
-          ru: 'Ц',
-        },
+    },
+    KeyI: {
+      row: 2,
+      value: {
+        en: 'i',
+        ru: 'ш',
       },
-      {
-        value: {
-          en: 'e',
-          ru: 'у',
-        },
-        code: 'KeyE',
-        shiftedValue: {
-          en: 'E',
-          ru: 'У',
-        },
+      shiftedValue: {
+        en: 'I',
+        ru: 'Ш',
       },
-      {
-        value: {
-          en: 'r',
-          ru: 'к',
-        },
-        code: 'KeyR',
-        shiftedValue: {
-          en: 'R',
-          ru: 'К',
-        },
+    },
+    KeyO: {
+      row: 2,
+      value: {
+        en: 'o',
+        ru: 'щ',
       },
-      {
-        value: {
-          en: 't',
-          ru: 'е',
-        },
-        code: 'KeyT',
-        shiftedValue: {
-          en: 'T',
-          ru: 'Е',
-        },
+      shiftedValue: {
+        en: 'O',
+        ru: 'Щ',
       },
-      {
-        value: {
-          en: 'y',
-          ru: 'н',
-        },
-        code: 'KeyY',
-        shiftedValue: {
-          en: 'Y',
-          ru: 'Н',
-        },
+    },
+    KeyP: {
+      row: 2,
+      value: {
+        en: 'p',
+        ru: 'з',
       },
-      {
-        value: {
-          en: 'u',
-          ru: 'г',
-        },
-        code: 'KeyU',
-        shiftedValue: {
-          en: 'U',
-          ru: 'Г',
-        },
+      shiftedValue: {
+        en: 'P',
+        ru: 'З',
       },
-      {
-        value: {
-          en: 'i',
-          ru: 'ш',
-        },
-        code: 'KeyI',
-        shiftedValue: {
-          en: 'I',
-          ru: 'Ш',
-        },
+    },
+    BracketLeft: {
+      row: 2,
+      value: {
+        en: '[',
+        ru: 'х',
       },
-      {
-        value: {
-          en: 'o',
-          ru: 'щ',
-        },
-        code: 'KeyO',
-        shiftedValue: {
-          en: 'O',
-          ru: 'Щ',
-        },
+      shiftedValue: {
+        en: '{',
+        ru: 'Х',
       },
-      {
-        value: {
-          en: 'p',
-          ru: 'з',
-        },
-        code: 'KeyP',
-        shiftedValue: {
-          en: 'P',
-          ru: 'З',
-        },
+    },
+    BracketRight: {
+      row: 2,
+      value: {
+        en: ']',
+        ru: 'ъ',
       },
-      {
-        value: {
-          en: '[',
-          ru: 'х',
-        },
-        code: 'BracketLeft',
-        shiftedValue: {
-          en: '{',
-          ru: 'Х',
-        },
+      shiftedValue: {
+        en: '}',
+        ru: 'Ъ',
       },
-      {
-        value: {
-          en: ']',
-          ru: 'ъ',
-        },
-        code: 'BracketRight',
-        shiftedValue: {
-          en: '}',
-          ru: 'Ъ',
-        },
+    },
+    Delete: {
+      row: 2,
+      value: {
+        en: '',
+        ru: '',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Delete',
-        code: 'Delete',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      label: 'Delete',
+      shiftedValue: {
+        en: '',
+        ru: '',
       },
-    ],
-    [
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'CapsLock',
-        code: 'CapsLock',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+
+    CapsLock: {
+      row: 3,
+      value: {
+        en: '',
+        ru: '',
       },
-      {
-        value: {
-          en: 'a',
-          ru: 'ф',
-        },
-        code: 'KeyA',
-        shiftedValue: {
-          en: 'A',
-          ru: 'Ф',
-        },
+      label: 'CapsLock',
+      shiftedValue: {
+        en: '',
+        ru: '',
       },
-      {
-        value: {
-          en: 's',
-          ru: 'ы',
-        },
-        code: 'KeyS',
-        shiftedValue: {
-          en: 'S',
-          ru: 'Ы',
-        },
+    },
+    KeyA: {
+      row: 3,
+      value: {
+        en: 'a',
+        ru: 'ф',
       },
-      {
-        value: {
-          en: 'd',
-          ru: 'в',
-        },
-        code: 'KeyD',
-        shiftedValue: {
-          en: 'D',
-          ru: 'В',
-        },
+      shiftedValue: {
+        en: 'A',
+        ru: 'Ф',
       },
-      {
-        value: {
-          en: 'f',
-          ru: 'а',
-        },
-        code: 'KeyF',
-        shiftedValue: {
-          en: 'F',
-          ru: 'А',
-        },
+    },
+    KeyS: {
+      row: 3,
+      value: {
+        en: 's',
+        ru: 'ы',
       },
-      {
-        value: {
-          en: 'g',
-          ru: 'п',
-        },
-        code: 'KeyG',
-        shiftedValue: {
-          en: 'G',
-          ru: 'П',
-        },
+      shiftedValue: {
+        en: 'S',
+        ru: 'Ы',
       },
-      {
-        value: {
-          en: 'h',
-          ru: 'р',
-        },
-        code: 'KeyH',
-        shiftedValue: {
-          en: 'H',
-          ru: 'Р',
-        },
+    },
+    KeyD: {
+      row: 3,
+      value: {
+        en: 'd',
+        ru: 'в',
       },
-      {
-        value: {
-          en: 'j',
-          ru: 'о',
-        },
-        code: 'KeyJ',
-        shiftedValue: {
-          en: 'J',
-          ru: 'О',
-        },
+      shiftedValue: {
+        en: 'D',
+        ru: 'В',
       },
-      {
-        value: {
-          en: 'k',
-          ru: 'л',
-        },
-        code: 'KeyK',
-        shiftedValue: {
-          en: 'K',
-          ru: 'Л',
-        },
+    },
+    KeyF: {
+      row: 3,
+      value: {
+        en: 'f',
+        ru: 'а',
       },
-      {
-        value: {
-          en: 'l',
-          ru: 'д',
-        },
-        code: 'KeyL',
-        shiftedValue: {
-          en: 'L',
-          ru: 'Д',
-        },
+      shiftedValue: {
+        en: 'F',
+        ru: 'А',
       },
-      {
-        value: {
-          en: ';',
-          ru: 'ж',
-        },
-        code: 'Semicolon',
-        shiftedValue: {
-          en: ':',
-          ru: 'Ж',
-        },
+    },
+    KeyG: {
+      row: 3,
+      value: {
+        en: 'g',
+        ru: 'п',
       },
-      {
-        value: {
-          en: "'",
-          ru: 'э',
-        },
-        code: 'Quote',
-        shiftedValue: {
-          en: '"',
-          ru: 'Э',
-        },
+      shiftedValue: {
+        en: 'G',
+        ru: 'П',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Enter',
-        code: 'Enter',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+    KeyH: {
+      row: 3,
+      value: {
+        en: 'h',
+        ru: 'р',
       },
-    ],
-    [
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Shift',
-        code: 'ShiftLeft',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      shiftedValue: {
+        en: 'H',
+        ru: 'Р',
       },
-      {
-        value: {
-          en: 'z',
-          ru: 'я',
-        },
-        code: 'KeyZ',
-        shiftedValue: {
-          en: 'Z',
-          ru: 'Я',
-        },
+    },
+    KeyJ: {
+      row: 3,
+      value: {
+        en: 'j',
+        ru: 'о',
       },
-      {
-        value: {
-          en: 'x',
-          ru: 'ч',
-        },
-        code: 'KeyX',
-        shiftedValue: {
-          en: 'X',
-          ru: 'Ч',
-        },
+      shiftedValue: {
+        en: 'J',
+        ru: 'О',
       },
-      {
-        value: {
-          en: 'c',
-          ru: 'с',
-        },
-        code: 'KeyC',
-        shiftedValue: {
-          en: 'C',
-          ru: 'С',
-        },
+    },
+    KeyK: {
+      row: 3,
+      value: {
+        en: 'k',
+        ru: 'л',
       },
-      {
-        value: {
-          en: 'v',
-          ru: 'м',
-        },
-        code: 'KeyV',
-        shiftedValue: {
-          en: 'V',
-          ru: 'М',
-        },
+      shiftedValue: {
+        en: 'K',
+        ru: 'Л',
       },
-      {
-        value: {
-          en: 'b',
-          ru: 'и',
-        },
-        code: 'KeyB',
-        shiftedValue: {
-          en: 'B',
-          ru: 'И',
-        },
+    },
+    KeyL: {
+      row: 3,
+      value: {
+        en: 'l',
+        ru: 'д',
       },
-      {
-        value: {
-          en: 'n',
-          ru: 'т',
-        },
-        code: 'KeyN',
-        shiftedValue: {
-          en: 'N',
-          ru: 'Т',
-        },
+      shiftedValue: {
+        en: 'L',
+        ru: 'Д',
       },
-      {
-        value: {
-          en: 'm',
-          ru: 'ь',
-        },
-        code: 'KeyM',
-        shiftedValue: {
-          en: 'M',
-          ru: 'Ь',
-        },
+    },
+    Semicolon: {
+      row: 3,
+      value: {
+        en: ';',
+        ru: 'ж',
       },
-      {
-        value: {
-          en: ',',
-          ru: 'б',
-        },
-        code: 'Comma',
-        shiftedValue: {
-          en: '<',
-          ru: 'Б',
-        },
+      shiftedValue: {
+        en: ':',
+        ru: 'Ж',
       },
-      {
-        value: {
-          en: '.',
-          ru: 'ю',
-        },
-        code: 'Period',
-        shiftedValue: {
-          en: '>',
-          ru: 'Ю',
-        },
+    },
+    Quote: {
+      row: 3,
+      value: {
+        en: "'",
+        ru: 'э',
       },
-      {
-        value: {
-          en: '/',
-          ru: '.',
-        },
-        code: 'Slash',
-        shiftedValue: {
-          en: '?',
-          ru: ',',
-        },
+      shiftedValue: {
+        en: '"',
+        ru: 'Э',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: '↑',
-        code: 'ArrowUp',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+    Enter: {
+      row: 3,
+      value: {
+        en: '',
+        ru: '',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Shift',
-        code: 'ShiftRight',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      label: 'Enter',
+      shiftedValue: {
+        en: '',
+        ru: '',
       },
-    ],
-    [
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Ctrl',
-        code: 'ControlLeft',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+
+    ShiftLeft: {
+      row: 4,
+      value: {
+        en: '',
+        ru: '',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Win',
-        code: 'Win',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      label: 'Shift',
+      shiftedValue: {
+        en: '',
+        ru: '',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Alt',
-        code: 'AltLeft',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+    KeyZ: {
+      row: 4,
+      value: {
+        en: 'z',
+        ru: 'я',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: '-',
-        code: 'Space',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      shiftedValue: {
+        en: 'Z',
+        ru: 'Я',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Alt',
-        code: 'AltRight',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+    KeyX: {
+      row: 4,
+      value: {
+        en: 'x',
+        ru: 'ч',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: 'Ctrl',
-        code: 'ControlRight',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      shiftedValue: {
+        en: 'X',
+        ru: 'Ч',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: '←',
-        code: 'ArrowLeft',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+    KeyC: {
+      row: 4,
+      value: {
+        en: 'c',
+        ru: 'с',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: '↓',
-        code: 'ArrowDown',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+      shiftedValue: {
+        en: 'C',
+        ru: 'С',
       },
-      {
-        value: {
-          en: '',
-          ru: '',
-        },
-        label: '→',
-        code: 'ArrowRight',
-        shiftedValue: {
-          en: '',
-          ru: '',
-        },
+    },
+    KeyV: {
+      row: 4,
+      value: {
+        en: 'v',
+        ru: 'м',
       },
-    ],
-  ];
+      shiftedValue: {
+        en: 'V',
+        ru: 'М',
+      },
+    },
+    KeyB: {
+      row: 4,
+      value: {
+        en: 'b',
+        ru: 'и',
+      },
+      shiftedValue: {
+        en: 'B',
+        ru: 'И',
+      },
+    },
+    KeyN: {
+      row: 4,
+      value: {
+        en: 'n',
+        ru: 'т',
+      },
+      shiftedValue: {
+        en: 'N',
+        ru: 'Т',
+      },
+    },
+    KeyM: {
+      row: 4,
+      value: {
+        en: 'm',
+        ru: 'ь',
+      },
+      shiftedValue: {
+        en: 'M',
+        ru: 'Ь',
+      },
+    },
+    Comma: {
+      row: 4,
+      value: {
+        en: ',',
+        ru: 'б',
+      },
+      shiftedValue: {
+        en: '<',
+        ru: 'Б',
+      },
+    },
+    Period: {
+      row: 4,
+      value: {
+        en: '.',
+        ru: 'ю',
+      },
+      shiftedValue: {
+        en: '>',
+        ru: 'Ю',
+      },
+    },
+    Slash: {
+      row: 4,
+      value: {
+        en: '/',
+        ru: '.',
+      },
+      shiftedValue: {
+        en: '?',
+        ru: ',',
+      },
+    },
+    ArrowUp: {
+      row: 4,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: '↑',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    ShiftRight: {
+      row: 4,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Shift',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+
+    ControlLeft: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Ctrl',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    Win: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Win',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    AltLeft: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Alt',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    Space: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: '-',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    AltRight: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Alt',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    ControlRight: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: 'Ctrl',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    ArrowLeft: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: '←',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    ArrowDown: {
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: '↓',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+    ArrowRight:{
+      row: 5,
+      value: {
+        en: '',
+        ru: '',
+      },
+      label: '→',
+      shiftedValue: {
+        en: '',
+        ru: '',
+      },
+    },
+  }
 }
 
 export function Key(keyObj) {
@@ -791,726 +783,3 @@ export function Key(keyObj) {
   key.classList.add(...classList);
   return key;
 }
-
-// export const keys = [
-//   [
-//     {
-//       value: {
-//         en: '`',
-//         ru: 'ё',
-//       },
-//       code: 'Backquote',
-//       shiftedValue: {
-//         en: '~',
-//         ru: 'Ё',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '1',
-//         ru: '1',
-//       },
-//       code: 'Digit1',
-//       shiftedValue: {
-//         en: '!',
-//         ru: '!',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '2',
-//         ru: '2',
-//       },
-//       code: 'Digit2',
-//       shiftedValue: {
-//         en: '@',
-//         ru: '"',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '3',
-//         ru: '3',
-//       },
-//       code: 'Digit3',
-//       shiftedValue: {
-//         en: '#',
-//         ru: '№',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '4',
-//         ru: '4',
-//       },
-//       code: 'Digit4',
-//       shiftedValue: {
-//         en: '$',
-//         ru: ';',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '5',
-//         ru: '5',
-//       },
-//       code: 'Digit5',
-//       shiftedValue: {
-//         en: '%',
-//         ru: '%',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '6',
-//         ru: '6',
-//       },
-//       code: 'Digit6',
-//       shiftedValue: {
-//         en: '^',
-//         ru: ':',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '7',
-//         ru: '7',
-//       },
-//       code: 'Digit7',
-//       shiftedValue: {
-//         en: '&',
-//         ru: '?',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '8',
-//         ru: '8',
-//       },
-//       code: 'Digit8',
-//       shiftedValue: {
-//         en: '*',
-//         ru: '*',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '9',
-//         ru: '9',
-//       },
-//       code: 'Digit9',
-//       shiftedValue: {
-//         en: '(',
-//         ru: '(',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '0',
-//         ru: '0',
-//       },
-//       code: 'Digit0',
-//       shiftedValue: {
-//         en: ')',
-//         ru: ')',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '-',
-//         ru: '-',
-//       },
-//       code: 'Minus',
-//       shiftedValue: {
-//         en: '_',
-//         ru: '_',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '=',
-//         ru: '=',
-//       },
-//       code: 'Equal',
-//       shiftedValue: {
-//         en: '+',
-//         ru: '+',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Backspace',
-//       code: 'Backspace',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//   ],
-//   [
-//     {
-//       value: {
-//         en: '\t',
-//         ru: '\t',
-//       },
-//       label: 'Tab',
-//       code: 'Tab',
-//       shiftedValue: {
-//         en: '\t',
-//         ru: '\t',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'q',
-//         ru: 'й',
-//       },
-//       code: 'KeyQ',
-//       shiftedValue: {
-//         en: 'Q',
-//         ru: 'Й',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'w',
-//         ru: 'ц',
-//       },
-//       code: 'KeyW',
-//       shiftedValue: {
-//         en: 'W',
-//         ru: 'Ц',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'e',
-//         ru: 'у',
-//       },
-//       code: 'KeyE',
-//       shiftedValue: {
-//         en: 'E',
-//         ru: 'У',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'r',
-//         ru: 'к',
-//       },
-//       code: 'KeyR',
-//       shiftedValue: {
-//         en: 'R',
-//         ru: 'К',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 't',
-//         ru: 'е',
-//       },
-//       code: 'KeyT',
-//       shiftedValue: {
-//         en: 'T',
-//         ru: 'Е',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'y',
-//         ru: 'н',
-//       },
-//       code: 'KeyY',
-//       shiftedValue: {
-//         en: 'Y',
-//         ru: 'Н',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'u',
-//         ru: 'г',
-//       },
-//       code: 'KeyU',
-//       shiftedValue: {
-//         en: 'U',
-//         ru: 'Г',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'i',
-//         ru: 'ш',
-//       },
-//       code: 'KeyI',
-//       shiftedValue: {
-//         en: 'I',
-//         ru: 'Ш',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'o',
-//         ru: 'щ',
-//       },
-//       code: 'KeyO',
-//       shiftedValue: {
-//         en: 'O',
-//         ru: 'Щ',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'p',
-//         ru: 'з',
-//       },
-//       code: 'KeyP',
-//       shiftedValue: {
-//         en: 'P',
-//         ru: 'З',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '[',
-//         ru: 'х',
-//       },
-//       code: 'BracketLeft',
-//       shiftedValue: {
-//         en: '{',
-//         ru: 'Х',
-//       },
-//     },
-//     {
-//       value: {
-//         en: ']',
-//         ru: 'ъ',
-//       },
-//       code: 'BracketRight',
-//       shiftedValue: {
-//         en: '}',
-//         ru: 'Ъ',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Delete',
-//       code: 'Delete',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//   ],
-//   [
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'CapsLock',
-//       code: 'CapsLock',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'a',
-//         ru: 'ф',
-//       },
-//       code: 'KeyA',
-//       shiftedValue: {
-//         en: 'A',
-//         ru: 'Ф',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 's',
-//         ru: 'ы',
-//       },
-//       code: 'KeyS',
-//       shiftedValue: {
-//         en: 'S',
-//         ru: 'Ы',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'd',
-//         ru: 'в',
-//       },
-//       code: 'KeyD',
-//       shiftedValue: {
-//         en: 'D',
-//         ru: 'В',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'f',
-//         ru: 'а',
-//       },
-//       code: 'KeyF',
-//       shiftedValue: {
-//         en: 'F',
-//         ru: 'А',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'g',
-//         ru: 'п',
-//       },
-//       code: 'KeyG',
-//       shiftedValue: {
-//         en: 'G',
-//         ru: 'П',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'h',
-//         ru: 'р',
-//       },
-//       code: 'KeyH',
-//       shiftedValue: {
-//         en: 'H',
-//         ru: 'Р',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'j',
-//         ru: 'о',
-//       },
-//       code: 'KeyJ',
-//       shiftedValue: {
-//         en: 'J',
-//         ru: 'О',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'k',
-//         ru: 'л',
-//       },
-//       code: 'KeyK',
-//       shiftedValue: {
-//         en: 'K',
-//         ru: 'Л',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'l',
-//         ru: 'д',
-//       },
-//       code: 'KeyL',
-//       shiftedValue: {
-//         en: 'L',
-//         ru: 'Д',
-//       },
-//     },
-//     {
-//       value: {
-//         en: ';',
-//         ru: 'ж',
-//       },
-//       code: 'Semicolon',
-//       shiftedValue: {
-//         en: ':',
-//         ru: 'Ж',
-//       },
-//     },
-//     {
-//       value: {
-//         en: "'",
-//         ru: 'э',
-//       },
-//       code: 'Quote',
-//       shiftedValue: {
-//         en: '"',
-//         ru: 'Э',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Enter',
-//       code: 'Enter',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//   ],
-//   [
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Shift',
-//       code: 'ShiftLeft',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'z',
-//         ru: 'я',
-//       },
-//       code: 'KeyZ',
-//       shiftedValue: {
-//         en: 'Z',
-//         ru: 'Я',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'x',
-//         ru: 'ч',
-//       },
-//       code: 'KeyX',
-//       shiftedValue: {
-//         en: 'X',
-//         ru: 'Ч',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'c',
-//         ru: 'с',
-//       },
-//       code: 'KeyC',
-//       shiftedValue: {
-//         en: 'C',
-//         ru: 'С',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'v',
-//         ru: 'м',
-//       },
-//       code: 'KeyV',
-//       shiftedValue: {
-//         en: 'V',
-//         ru: 'М',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'b',
-//         ru: 'и',
-//       },
-//       code: 'KeyB',
-//       shiftedValue: {
-//         en: 'B',
-//         ru: 'И',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'n',
-//         ru: 'т',
-//       },
-//       code: 'KeyN',
-//       shiftedValue: {
-//         en: 'N',
-//         ru: 'Т',
-//       },
-//     },
-//     {
-//       value: {
-//         en: 'm',
-//         ru: 'ь',
-//       },
-//       code: 'KeyM',
-//       shiftedValue: {
-//         en: 'M',
-//         ru: 'Ь',
-//       },
-//     },
-//     {
-//       value: {
-//         en: ',',
-//         ru: 'б',
-//       },
-//       code: 'Comma',
-//       shiftedValue: {
-//         en: '<',
-//         ru: 'Б',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '.',
-//         ru: 'ю',
-//       },
-//       code: 'Period',
-//       shiftedValue: {
-//         en: '>',
-//         ru: 'Ю',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '/',
-//         ru: '.',
-//       },
-//       code: 'Slash',
-//       shiftedValue: {
-//         en: '?',
-//         ru: ',',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: '↑',
-//       code: 'ArrowUp',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Shift',
-//       code: 'ShiftRight',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//   ],
-//   [
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Ctrl',
-//       code: 'ControlLeft',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Win',
-//       code: 'Win',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Alt',
-//       code: 'AltLeft',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: '-',
-//       code: 'Space',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Alt',
-//       code: 'AltRight',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: 'Ctrl',
-//       code: 'ControlRight',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: '←',
-//       code: 'ArrowLeft',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: '↓',
-//       code: 'ArrowDown',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//     {
-//       value: {
-//         en: '',
-//         ru: '',
-//       },
-//       label: '→',
-//       code: 'ArrowRight',
-//       shiftedValue: {
-//         en: '',
-//         ru: '',
-//       },
-//     },
-//   ],
-// ];
