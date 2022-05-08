@@ -1,10 +1,14 @@
-import { createElement, makePage } from './utils.js'
-import { Keyboard, keys } from "./keyboard.js";
+import { makePage } from './utils.js';
+import { Keyboard } from './keyboard.js';
 
-let lang = window.localStorage.getItem("lang") ? window.localStorage.getItem("lang") : window.localStorage.setItem("lang", 'en');
+// let lang = window.localStorage.getItem("lang")
+// ? window.localStorage.getItem("lang")
+// : window.localStorage.setItem("lang", 'en');
 
-const keyboard = new Keyboard(null, lang);
+const lang = 'ru';
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  makePage(keyboard, keys);
+const keyboard = new Keyboard(lang);
+
+window.addEventListener('DOMContentLoaded', () => {
+  makePage(keyboard);
 });

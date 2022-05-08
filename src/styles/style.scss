@@ -178,6 +178,10 @@ a {
       box-shadow: none;
     }
 
+    &--highlight {
+      border: #162fff solid 2px;
+    }
+
     &--toggled {
       color: #fff;
       text-shadow: 0 0 5px #ddd;

@@ -1,4 +1,4 @@
-import { Key } from './keyboard.js'
+import { Key } from './keyboard.js';
 
 export function createElement(type, className, textContent, attributes) {
   const element = document.createElement(type);
@@ -10,53 +10,53 @@ export function createElement(type, className, textContent, attributes) {
     element.textContent = textContent;
   }
 
-  if (attributes && attributes.length > 0) {
-    for (attr of attributes) {
-      element.setAttribute(attr, attributes[attr]);
-    }
+  if (attributes && Object.entries(attributes).length > 0) {
+    Object.entries(attributes).forEach(([key, value]) => {
+      element.setAttribute(key, value);
+    });
   }
 
-  return element
+  return element;
 }
 
-export function changeKeyboardLayout(keyboard, keysArr) {
+export function changeKeyboardLayout(keyboard) {
   keyboard.rows.forEach((row, rowIndex) => {
     row.childNodes.forEach((key, keyIndex) => {
-      const keyObj = keysArr[rowIndex][keyIndex];
+      const keyObj = keyboard.keys[rowIndex][keyIndex];
       key.textContent = keyObj.label || keyObj.value[keyboard.lang];
     });
   });
 }
 
 function makeKeyboardRows(lang, keysArr) {
-  return keysArr.map(row => {
+  return keysArr.map((row) => {
     const keyboardRowElement = createElement('div', ['keyboard__row']);
-    const keysElementsArray = row.map(keyObj => {
+    const keysElementsArray = row.map((keyObj) => {
       const keyElement = Key(keyObj);
       keyElement.textContent = keyObj.label || keyObj.value[lang];
 
-      return keyElement
+      return keyElement;
     });
     keyboardRowElement.append(...keysElementsArray);
 
-    return keyboardRowElement
+    return keyboardRowElement;
   });
 }
 
-export function makePage(keyboard, keys) {
+export function makePage(keyboard) {
   const wrapper = createElement('div', ['wrapper']);
   const container = createElement('div', ['_container']);
-  const prompt = createElement('h1', ['prompt'], "Type in some text:");
+  const prompt = createElement('h1', ['prompt'], 'Type in some text:');
 
   const textareaContainer = createElement('div', ['textarea', 'textarea__container']);
-  const textarea = createElement('textarea', ['textarea__field'], '', {name: "field", id: "textarea", autofocus: ""});
+  const textarea = createElement('textarea', ['textarea__field'], '', { name: 'field', id: 'textarea', autofocus: '' });
   const resetButton = createElement('button', ['button', 'button__reset']);
 
   const keyboardContainer = createElement('div', ['keyboard']);
   const keyboardRowsWrapper = createElement('div', ['keyboard__wrapper']);
-  const keyboardRows = makeKeyboardRows(keyboard.lang, keys);
+  const keyboardRows = makeKeyboardRows(keyboard.lang, keyboard.keys);
   keyboard.rows = keyboardRows;
-  changeKeyboardLayout(keyboard, keys);
+  changeKeyboardLayout(keyboard);
 
   const caption = createElement('div', ['caption']);
   const captionText = createElement('p', ['caption__text']);
@@ -69,7 +69,7 @@ export function makePage(keyboard, keys) {
 
   textareaContainer.append(textarea, resetButton);
 
-  container.append(prompt, textareaContainer, keyboardContainer, caption)
+  container.append(prompt, textareaContainer, keyboardContainer, caption);
   wrapper.append(container);
-  document.body.append(wrapper);
+  document.body.prepend(wrapper);
 }
