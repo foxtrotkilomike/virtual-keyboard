@@ -4,7 +4,7 @@ import '../styles/style.scss';
 
 const language = window.localStorage.getItem('lang')
   ? window.localStorage.getItem('lang')
-  : window.localStorage.setItem('lang', 'en');
+  : window.localStorage.setItem('lang', 'ru');
 
 const keyboard = new Keyboard(language);
 let resetButtonElem;
@@ -25,7 +25,18 @@ function shiftUnshift(kbd, kbdKey) {
   }
 }
 
-function addListenersRealKeys(textarea) {
+function insertValue(textareaElm, insertedElm) {
+  const textarea = textareaElm;
+  const inserted = insertedElm;
+  const substringBefore = textarea.value.slice(0, textarea.selectionStart);
+  const substringAfter = textarea.value.slice(textarea.selectionStart);
+  textarea.value = substringBefore + inserted + substringAfter;
+  textarea.selectionEnd -= substringAfter.length;
+}
+
+function addListenersRealKeys(textareaElm) {
+  const textarea = textareaElm;
+
   document.addEventListener('keydown', (evt) => {
     // highlight keys on virtual keyboard
     if (keyboard.keys[`${evt.code}`]) {
@@ -36,6 +47,8 @@ function addListenersRealKeys(textarea) {
     // handle Tab
     if (evt.code === 'Tab') {
       evt.preventDefault();
+      textarea.focus();
+      textarea.value += '\t';
     }
 
     // handle CapsLock
@@ -103,7 +116,10 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
       case 'Backspace':
         callback = () => {
           textarea.focus();
-          textarea.value = textarea.value.slice(0, -1);
+          const substringBefore = textarea.value.slice(0, textarea.selectionStart - 1);
+          const substringAfter = textarea.value.slice(textarea.selectionStart);
+          textarea.value = substringBefore.concat(substringAfter);
+          textarea.selectionEnd -= substringAfter.length;
         };
         break;
 
@@ -111,7 +127,7 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
         callback = (evt) => {
           evt.preventDefault();
           textarea.focus();
-          textarea.value += '\t';
+          insertValue(textarea, '\t');
         };
         break;
 
@@ -141,7 +157,7 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
       case 'Enter':
         callback = () => {
           textarea.focus();
-          textarea.value += '\n';
+          insertValue(textarea, '\n');
         };
         break;
 
@@ -167,14 +183,14 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
       case 'Win':
         callback = () => {
           textarea.focus();
-          textarea.value += 'Congrats, you won!:)';
+          insertValue(textarea, 'Congrats, you won!:)');
         };
         break;
 
       case 'Space':
         callback = () => {
           textarea.focus();
-          textarea.value += ' ';
+          insertValue(textarea, ' ');
         };
         break;
 
@@ -211,9 +227,9 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
           callback = () => {
             textarea.focus();
             if (keyboard.keys[key].shifted) {
-              textarea.value += keyboard.keys[key][keyboard.lang].shiftedValue;
+              insertValue(textarea, keyboard.keys[key][keyboard.lang].shiftedValue);
             } else {
-              textarea.value += keyboard.keys[key][keyboard.lang].value;
+              insertValue(textarea, keyboard.keys[key][keyboard.lang].value);
             }
           };
         }

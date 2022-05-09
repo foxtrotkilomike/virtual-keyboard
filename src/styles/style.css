@@ -384,12 +384,8 @@ template {
 }
 
 @font-face {
-  font-family: "Inconsolata";
-  src: url("../assets/Inconsolata.ttf");
-}
-@font-face {
-  font-family: "Fredoka One";
-  src: url("../assets/FredokaOne.ttf");
+  font-family: "Roboto Mono";
+  src: url("../assets/RobotoMono-Regular.ttf");
 }
 @font-face {
   font-family: "Fira Sans";
@@ -444,9 +440,10 @@ a {
 }
 
 .prompt {
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-size: 32px;
   font-weight: 600;
+  line-height: 1.05em;
   text-align: center;
   user-select: none;
 }
@@ -459,9 +456,10 @@ a {
   max-width: 100%;
   min-height: 50px;
   padding: 5px;
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-size: 20px;
   font-weight: bold;
+  line-height: 1.2em;
   background: transparent;
   border: 2px solid rgba(156, 52, 0, 0.3882352941);
   border-radius: 5px;
@@ -613,9 +611,10 @@ a {
   background-color: rgba(255, 86, 34, 0.15);
 }
 .caption__text {
-  font-family: "Inconsolata", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   font-size: 20px;
   font-weight: 400;
+  line-height: 1.2em;
 }
 
 code {

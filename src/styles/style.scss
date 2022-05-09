@@ -2,7 +2,7 @@
 @import "normalize";
 @import "fonts";
 
-$main-font: "Inconsolata";
+$main-font: "Roboto Mono";
 $keycaps-font: "Fira Sans";
 $color-stone: #877974;
 
@@ -59,6 +59,7 @@ a {
   font-family: $main-font, sans-serif;
   font-size: 32px;
   font-weight: 600;
+  line-height: 1.05em;
   text-align: center;
   user-select: none;
 }
@@ -77,6 +78,7 @@ a {
     font-family: $main-font, sans-serif;
     font-size: 20px;
     font-weight: bold;
+    line-height: 1.2em;
 
     background: transparent;
     border: 2px solid #9c340063;
@@ -274,6 +276,7 @@ a {
     font-family: $main-font, sans-serif;
     font-size: 20px;
     font-weight: 400;
+    line-height: 1.2em;
   }
 }
 
