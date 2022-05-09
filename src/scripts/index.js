@@ -1,5 +1,5 @@
-import { makePage, changeKeyboardLayout } from './utils.js';
-import { Keyboard } from './keyboard.js';
+import { makePage, changeKeyboardLayout } from './utils';
+import { Keyboard } from './keyboard';
 import '../styles/style.scss';
 
 let language;

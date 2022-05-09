@@ -1,4 +1,4 @@
-import { Key } from './keyboard.js';
+import { Key } from './keyboard';
 
 export function createElement(type, className, textContent, attributes) {
   const element = document.createElement(type);

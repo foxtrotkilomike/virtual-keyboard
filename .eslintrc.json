@@ -10,7 +10,6 @@
     "sourceType": "module"
   },
   "rules": {
-    "indent": 2,
-    "import/extensions": [2, "always"]
+    "indent": 2
   }
 }
