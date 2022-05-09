@@ -1,5 +1,6 @@
 import { makePage, changeKeyboardLayout } from './utils.js';
 import { Keyboard } from './keyboard.js';
+import '../styles/style.scss';
 
 const language = window.localStorage.getItem('lang')
   ? window.localStorage.getItem('lang')
@@ -9,6 +10,20 @@ const keyboard = new Keyboard(language);
 let resetButtonElem;
 let textareaElem;
 const keysPressed = {};
+
+function shiftUnshift(kbd, kbdKey) {
+  const keyBoard = kbd;
+  const key = kbdKey;
+  const { lang } = keyBoard;
+
+  keyBoard.keys[key].shifted = keyBoard.keys[key].shifted !== true;
+
+  if (keyBoard.keys[key].shifted) {
+    keyBoard.keys[key].element.textContent = keyBoard.keys[key][lang].shiftedValue;
+  } else {
+    keyBoard.keys[key].element.textContent = keyBoard.keys[key][lang].value;
+  }
+}
 
 function addListenersRealKeys(textarea) {
   document.addEventListener('keydown', (evt) => {
@@ -27,17 +42,11 @@ function addListenersRealKeys(textarea) {
     if (evt.code === 'CapsLock') {
       if (!evt.repeat) {
         keyboard.keys.CapsLock.element.classList.toggle('keyboard__key--toggled');
+        const { lang } = keyboard;
 
         Object.keys(keyboard.keys).forEach((key) => {
-          if (key.match(/^Key/)) {
-            const { lang } = keyboard;
-            if (!keyboard.keys[key].shifted) {
-              keyboard.keys[key].shifted = true;
-              keyboard.keys[key].element.textContent = keyboard.keys[key].shiftedValue[lang];
-            } else {
-              keyboard.keys[key].shifted = false;
-              keyboard.keys[key].element.textContent = keyboard.keys[key].value[lang];
-            }
+          if (keyboard.keys[key][lang].isLetter) {
+            shiftUnshift(keyboard, key);
           }
         });
       }
@@ -48,15 +57,7 @@ function addListenersRealKeys(textarea) {
       if (!evt.repeat) {
         Object.keys(keyboard.keys).forEach((key) => {
           if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
-            keyboard.keys[key].shifted = keyboard.keys[key].shifted !== true;
-
-            if (!keyboard.keys[key].shifted) {
-              keyboard.keys[key].element.textContent = keyboard.keys[key]
-                .value[keyboard.lang];
-            } else {
-              keyboard.keys[key].element.textContent = keyboard.keys[key]
-                .shiftedValue[keyboard.lang];
-            }
+            shiftUnshift(keyboard, key);
           }
         });
       }
@@ -82,15 +83,7 @@ function addListenersRealKeys(textarea) {
     if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
       Object.keys(keyboard.keys).forEach((key) => {
         if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
-          keyboard.keys[key].shifted = keyboard.keys[key].shifted !== true;
-
-          if (!keyboard.keys[key].shifted) {
-            keyboard.keys[key].element.textContent = keyboard.keys[key]
-              .value[keyboard.lang];
-          } else {
-            keyboard.keys[key].element.textContent = keyboard.keys[key]
-              .shiftedValue[keyboard.lang];
-          }
+          shiftUnshift(keyboard, key);
         }
       });
     }
@@ -135,18 +128,11 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
       case 'CapsLock':
         callback = () => {
           keyboard.keys.CapsLock.element.classList.toggle('keyboard__key--toggled');
+          const { lang } = keyboard;
 
           Object.keys(keyboard.keys).forEach((keyName) => {
-            if (keyName.match(/^Key/)) {
-              const { lang } = keyboard;
-              if (!keyboard.keys[keyName].shifted) {
-                keyboard.keys[keyName].shifted = true;
-                keyboard.keys[keyName].element.textContent = keyboard.keys[keyName]
-                  .shiftedValue[lang];
-              } else {
-                keyboard.keys[keyName].shifted = false;
-                keyboard.keys[keyName].element.textContent = keyboard.keys[keyName].value[lang];
-              }
+            if (keyboard.keys[keyName][lang].isLetter) {
+              shiftUnshift(keyboard, keyName);
             }
           });
         };
@@ -164,8 +150,7 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
         keyboard.keys[key].element.addEventListener('mousedown', () => {
           Object.keys(keyboard.keys).forEach((keyName) => {
             if (keyboard.keys[keyName].element.classList.contains('keyboard__key--standard')) {
-              keyboard.keys[keyName].element.textContent = keyboard.keys[keyName]
-                .shiftedValue[keyboard.lang];
+              shiftUnshift(keyboard, keyName);
             }
           });
         });
@@ -173,10 +158,7 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
         keyboard.keys[key].element.addEventListener('mouseup', () => {
           Object.keys(keyboard.keys).forEach((keyName) => {
             if (keyboard.keys[keyName].element.classList.contains('keyboard__key--standard')) {
-              if (!keyboard.keys[keyName].shifted) {
-                keyboard.keys[keyName].element.textContent = keyboard.keys[keyName]
-                  .value[keyboard.lang];
-              }
+              shiftUnshift(keyboard, keyName);
             }
           });
         });
@@ -229,9 +211,9 @@ function addListenersVirtualKeys(resetButtonEl, textareaEl) {
           callback = () => {
             textarea.focus();
             if (keyboard.keys[key].shifted) {
-              textarea.value += keyboard.keys[key].shiftedValue[keyboard.lang];
+              textarea.value += keyboard.keys[key][keyboard.lang].shiftedValue;
             } else {
-              textarea.value += keyboard.keys[key].value[keyboard.lang];
+              textarea.value += keyboard.keys[key][keyboard.lang].value;
             }
           };
         }

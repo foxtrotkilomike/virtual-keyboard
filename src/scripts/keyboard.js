@@ -6,716 +6,842 @@ export class Keyboard {
   keys = {
     Backquote: {
       row: 0,
-      value: {
-        en: '`',
-        ru: 'ё',
+      en: {
+        value: '`',
+        shiftedValue: '~',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '~',
-        ru: 'Ё',
+      ru: {
+        value: 'ё',
+        shiftedValue: 'Ё',
+        isLetter: true,
       },
     },
     Digit1: {
       row: 0,
-      value: {
-        en: '1',
-        ru: '1',
+      en: {
+        value: '1',
+        shiftedValue: '!',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '!',
-        ru: '!',
+      ru: {
+        value: '1',
+        shiftedValue: '!',
+        isLetter: false,
       },
     },
     Digit2: {
       row: 0,
-      value: {
-        en: '2',
-        ru: '2',
+      en: {
+        value: '2',
+        shiftedValue: '@',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '@',
-        ru: '"',
+      ru: {
+        value: '2',
+        shiftedValue: '"',
+        isLetter: false,
       },
     },
     Digit3: {
       row: 0,
-      value: {
-        en: '3',
-        ru: '3',
+      en: {
+        value: '3',
+        shiftedValue: '#',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '#',
-        ru: '№',
+      ru: {
+        value: '3',
+        shiftedValue: '№',
+        isLetter: false,
       },
     },
     Digit4: {
       row: 0,
-      value: {
-        en: '4',
-        ru: '4',
+      en: {
+        value: '4',
+        shiftedValue: '$',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '$',
-        ru: ';',
+      ru: {
+        value: '4',
+        shiftedValue: ';',
+        isLetter: false,
       },
     },
     Digit5: {
       row: 0,
-      value: {
-        en: '5',
-        ru: '5',
+      en: {
+        value: '5',
+        shiftedValue: '%',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '%',
-        ru: '%',
+      ru: {
+        value: '5',
+        shiftedValue: '%',
+        isLetter: false,
       },
     },
     Digit6: {
       row: 0,
-      value: {
-        en: '6',
-        ru: '6',
+      en: {
+        value: '6',
+        shiftedValue: '^',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '^',
-        ru: ':',
+      ru: {
+        value: '6',
+        shiftedValue: ':',
+        isLetter: false,
       },
     },
     Digit7: {
       row: 0,
-      value: {
-        en: '7',
-        ru: '7',
+      en: {
+        value: '7',
+        shiftedValue: '&',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '&',
-        ru: '?',
+      ru: {
+        value: '7',
+        shiftedValue: '?',
+        isLetter: false,
       },
     },
     Digit8: {
       row: 0,
-      value: {
-        en: '8',
-        ru: '8',
+      en: {
+        value: '8',
+        shiftedValue: '*',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '*',
-        ru: '*',
+      ru: {
+        value: '8',
+        shiftedValue: '*',
+        isLetter: false,
       },
     },
     Digit9: {
       row: 0,
-      value: {
-        en: '9',
-        ru: '9',
+      en: {
+        value: '9',
+        shiftedValue: '(',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '(',
-        ru: '(',
+      ru: {
+        value: '9',
+        shiftedValue: '(',
+        isLetter: false,
       },
     },
     Digit0: {
       row: 0,
-      value: {
-        en: '0',
-        ru: '0',
+      en: {
+        value: '0',
+        shiftedValue: ')',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: ')',
-        ru: ')',
+      ru: {
+        value: '0',
+        shiftedValue: ')',
+        isLetter: false,
       },
     },
     Minus: {
       row: 0,
-      value: {
-        en: '-',
-        ru: '-',
+      en: {
+        value: '-',
+        shiftedValue: '_',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '_',
-        ru: '_',
+      ru: {
+        value: '-',
+        shiftedValue: '_',
+        isLetter: false,
       },
     },
     Equal: {
       row: 0,
-      value: {
-        en: '=',
-        ru: '=',
+      en: {
+        value: '=',
+        shiftedValue: '+',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '+',
-        ru: '+',
+      ru: {
+        value: '=',
+        shiftedValue: '+',
+        isLetter: false,
       },
     },
     Backspace: {
       row: 0,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Backspace',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
 
     Tab: {
       row: 1,
-      value: {
-        en: '\t',
-        ru: '\t',
-      },
       label: 'Tab',
-      shiftedValue: {
-        en: '\t',
-        ru: '\t',
+      en: {
+        value: '\t',
+        shiftedValue: '\t',
+        isLetter: false,
+      },
+      ru: {
+        value: '\t',
+        shiftedValue: '\t',
+        isLetter: false,
       },
     },
     KeyQ: {
       row: 1,
-      value: {
-        en: 'q',
-        ru: 'й',
+      en: {
+        value: 'q',
+        shiftedValue: 'Q',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'Q',
-        ru: 'Й',
+      ru: {
+        value: 'й',
+        shiftedValue: 'Й',
+        isLetter: true,
       },
     },
     KeyW: {
       row: 1,
-      value: {
-        en: 'w',
-        ru: 'ц',
+      en: {
+        value: 'w',
+        shiftedValue: 'W',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'W',
-        ru: 'Ц',
+      ru: {
+        value: 'ц',
+        shiftedValue: 'Ц',
+        isLetter: true,
       },
     },
     KeyE: {
       row: 1,
-      value: {
-        en: 'e',
-        ru: 'у',
+      en: {
+        value: 'e',
+        shiftedValue: 'E',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'E',
-        ru: 'У',
+      ru: {
+        value: 'у',
+        shiftedValue: 'У',
+        isLetter: true,
       },
     },
     KeyR: {
       row: 1,
-      value: {
-        en: 'r',
-        ru: 'к',
+      en: {
+        value: 'r',
+        shiftedValue: 'R',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'R',
-        ru: 'К',
+      ru: {
+        value: 'к',
+        shiftedValue: 'К',
+        isLetter: true,
       },
     },
     KeyT: {
       row: 1,
-      value: {
-        en: 't',
-        ru: 'е',
+      en: {
+        value: 't',
+        shiftedValue: 'T',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'T',
-        ru: 'Е',
+      ru: {
+        value: 'е',
+        shiftedValue: 'Е',
+        isLetter: true,
       },
     },
     KeyY: {
       row: 1,
-      value: {
-        en: 'y',
-        ru: 'н',
+      en: {
+        value: 'y',
+        shiftedValue: 'Y',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'Y',
-        ru: 'Н',
+      ru: {
+        value: 'н',
+        shiftedValue: 'Н',
+        isLetter: true,
       },
     },
     KeyU: {
       row: 1,
-      value: {
-        en: 'u',
-        ru: 'г',
+      en: {
+        value: 'u',
+        shiftedValue: 'U',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'U',
-        ru: 'Г',
+      ru: {
+        value: 'г',
+        shiftedValue: 'Г',
+        isLetter: true,
       },
     },
     KeyI: {
       row: 1,
-      value: {
-        en: 'i',
-        ru: 'ш',
+      en: {
+        value: 'i',
+        shiftedValue: 'I',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'I',
-        ru: 'Ш',
+      ru: {
+        value: 'ш',
+        shiftedValue: 'Ш',
+        isLetter: true,
       },
     },
     KeyO: {
       row: 1,
-      value: {
-        en: 'o',
-        ru: 'щ',
+      en: {
+        value: 'o',
+        shiftedValue: 'O',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'O',
-        ru: 'Щ',
+      ru: {
+        value: 'щ',
+        shiftedValue: 'Щ',
+        isLetter: true,
       },
     },
     KeyP: {
       row: 1,
-      value: {
-        en: 'p',
-        ru: 'з',
+      en: {
+        value: 'p',
+        shiftedValue: 'P',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'P',
-        ru: 'З',
+      ru: {
+        value: 'з',
+        shiftedValue: 'З',
+        isLetter: true,
       },
     },
     BracketLeft: {
       row: 1,
-      value: {
-        en: '[',
-        ru: 'х',
+      en: {
+        value: '[',
+        shiftedValue: '{',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '{',
-        ru: 'Х',
+      ru: {
+        value: 'х',
+        shiftedValue: 'Х',
+        isLetter: true,
       },
     },
     BracketRight: {
       row: 1,
-      value: {
-        en: ']',
-        ru: 'ъ',
+      en: {
+        value: ']',
+        shiftedValue: '}',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '}',
-        ru: 'Ъ',
+      ru: {
+        value: 'ъ',
+        shiftedValue: 'Ъ',
+        isLetter: true,
       },
     },
     Delete: {
       row: 1,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Delete',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
 
     CapsLock: {
       row: 2,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'CapsLock',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     KeyA: {
       row: 2,
-      value: {
-        en: 'a',
-        ru: 'ф',
+      en: {
+        value: 'a',
+        shiftedValue: 'A',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'A',
-        ru: 'Ф',
+      ru: {
+        value: 'ф',
+        shiftedValue: 'Ф',
+        isLetter: true,
       },
     },
     KeyS: {
       row: 2,
-      value: {
-        en: 's',
-        ru: 'ы',
+      en: {
+        value: 's',
+        shiftedValue: 'S',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'S',
-        ru: 'Ы',
+      ru: {
+        value: 'ы',
+        shiftedValue: 'Ы',
+        isLetter: true,
       },
     },
     KeyD: {
       row: 2,
-      value: {
-        en: 'd',
-        ru: 'в',
+      en: {
+        value: 'd',
+        shiftedValue: 'D',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'D',
-        ru: 'В',
+      ru: {
+        value: 'в',
+        shiftedValue: 'В',
+        isLetter: true,
       },
     },
     KeyF: {
       row: 2,
-      value: {
-        en: 'f',
-        ru: 'а',
+      en: {
+        value: 'f',
+        shiftedValue: 'F',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'F',
-        ru: 'А',
+      ru: {
+        value: 'а',
+        shiftedValue: 'А',
+        isLetter: true,
       },
     },
     KeyG: {
       row: 2,
-      value: {
-        en: 'g',
-        ru: 'п',
+      en: {
+        value: 'g',
+        shiftedValue: 'G',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'G',
-        ru: 'П',
+      ru: {
+        value: 'п',
+        shiftedValue: 'П',
+        isLetter: true,
       },
     },
     KeyH: {
       row: 2,
-      value: {
-        en: 'h',
-        ru: 'р',
+      en: {
+        value: 'h',
+        shiftedValue: 'H',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'H',
-        ru: 'Р',
+      ru: {
+        value: 'р',
+        shiftedValue: 'Р',
+        isLetter: true,
       },
     },
     KeyJ: {
       row: 2,
-      value: {
-        en: 'j',
-        ru: 'о',
+      en: {
+        value: 'j',
+        shiftedValue: 'J',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'J',
-        ru: 'О',
+      ru: {
+        value: 'о',
+        shiftedValue: 'О',
+        isLetter: true,
       },
     },
     KeyK: {
       row: 2,
-      value: {
-        en: 'k',
-        ru: 'л',
+      en: {
+        value: 'k',
+        shiftedValue: 'K',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'K',
-        ru: 'Л',
+      ru: {
+        value: 'л',
+        shiftedValue: 'Л',
+        isLetter: true,
       },
     },
     KeyL: {
       row: 2,
-      value: {
-        en: 'l',
-        ru: 'д',
+      en: {
+        value: 'l',
+        shiftedValue: 'L',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'L',
-        ru: 'Д',
+      ru: {
+        value: 'д',
+        shiftedValue: 'Д',
+        isLetter: true,
       },
     },
     Semicolon: {
       row: 2,
-      value: {
-        en: ';',
-        ru: 'ж',
+      en: {
+        value: ';',
+        shiftedValue: ':',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: ':',
-        ru: 'Ж',
+      ru: {
+        value: 'ж',
+        shiftedValue: 'Ж',
+        isLetter: true,
       },
     },
     Quote: {
       row: 2,
-      value: {
-        en: "'",
-        ru: 'э',
+      en: {
+        value: "'",
+        shiftedValue: '"',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '"',
-        ru: 'Э',
+      ru: {
+        value: 'э',
+        shiftedValue: 'Э',
+        isLetter: true,
       },
     },
     Enter: {
       row: 2,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Enter',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
 
     ShiftLeft: {
       row: 3,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Shift',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     KeyZ: {
       row: 3,
-      value: {
-        en: 'z',
-        ru: 'я',
+      en: {
+        value: 'z',
+        shiftedValue: 'Z',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'Z',
-        ru: 'Я',
+      ru: {
+        value: 'я',
+        shiftedValue: 'Я',
+        isLetter: true,
       },
     },
     KeyX: {
       row: 3,
-      value: {
-        en: 'x',
-        ru: 'ч',
+      en: {
+        value: 'x',
+        shiftedValue: 'X',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'X',
-        ru: 'Ч',
+      ru: {
+        value: 'ч',
+        shiftedValue: 'Ч',
+        isLetter: true,
       },
     },
     KeyC: {
       row: 3,
-      value: {
-        en: 'c',
-        ru: 'с',
+      en: {
+        value: 'c',
+        shiftedValue: 'C',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'C',
-        ru: 'С',
+      ru: {
+        value: 'с',
+        shiftedValue: 'С',
+        isLetter: true,
       },
     },
     KeyV: {
       row: 3,
-      value: {
-        en: 'v',
-        ru: 'м',
+      en: {
+        value: 'v',
+        shiftedValue: 'V',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'V',
-        ru: 'М',
+      ru: {
+        value: 'м',
+        shiftedValue: 'М',
+        isLetter: true,
       },
     },
     KeyB: {
       row: 3,
-      value: {
-        en: 'b',
-        ru: 'и',
+      en: {
+        value: 'b',
+        shiftedValue: 'B',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'B',
-        ru: 'И',
+      ru: {
+        value: 'и',
+        shiftedValue: 'И',
+        isLetter: true,
       },
     },
     KeyN: {
       row: 3,
-      value: {
-        en: 'n',
-        ru: 'т',
+      en: {
+        value: 'n',
+        shiftedValue: 'N',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'N',
-        ru: 'Т',
+      ru: {
+        value: 'т',
+        shiftedValue: 'Т',
+        isLetter: true,
       },
     },
     KeyM: {
       row: 3,
-      value: {
-        en: 'm',
-        ru: 'ь',
+      en: {
+        value: 'm',
+        shiftedValue: 'M',
+        isLetter: true,
       },
-      shiftedValue: {
-        en: 'M',
-        ru: 'Ь',
+      ru: {
+        value: 'ь',
+        shiftedValue: 'Ь',
+        isLetter: true,
       },
     },
     Comma: {
       row: 3,
-      value: {
-        en: ',',
-        ru: 'б',
+      en: {
+        value: ',',
+        shiftedValue: '<',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '<',
-        ru: 'Б',
+      ru: {
+        value: 'б',
+        shiftedValue: 'Б',
+        isLetter: true,
       },
     },
     Period: {
       row: 3,
-      value: {
-        en: '.',
-        ru: 'ю',
+      en: {
+        value: '.',
+        shiftedValue: '>',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '>',
-        ru: 'Ю',
+      ru: {
+        value: 'ю',
+        shiftedValue: 'Ю',
+        isLetter: true,
       },
     },
     Slash: {
       row: 3,
-      value: {
-        en: '/',
-        ru: '.',
+      en: {
+        value: '/',
+        shiftedValue: '?',
+        isLetter: false,
       },
-      shiftedValue: {
-        en: '?',
-        ru: ',',
+      ru: {
+        value: '.',
+        shiftedValue: ',',
+        isLetter: false,
       },
     },
     ArrowUp: {
       row: 3,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: '↑',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     ShiftRight: {
       row: 3,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Shift',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
 
     ControlLeft: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Ctrl',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     Win: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Win',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     AltLeft: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Alt',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     Space: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: '-',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     AltRight: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Alt',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     ControlRight: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: 'Ctrl',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     ArrowLeft: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: '←',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     ArrowDown: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: '↓',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
     ArrowRight: {
       row: 4,
-      value: {
-        en: '',
-        ru: '',
-      },
       label: '→',
-      shiftedValue: {
-        en: '',
-        ru: '',
+      en: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
+      },
+      ru: {
+        value: '',
+        shiftedValue: '',
+        isLetter: false,
       },
     },
   };

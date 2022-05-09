@@ -19,7 +19,6 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      chunks: ['index'],
       inject: 'body',
     }),
   ],

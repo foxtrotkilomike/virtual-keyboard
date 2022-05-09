@@ -611,7 +611,6 @@ a {
   padding: 20px;
   border-radius: 10px;
   background-color: rgba(255, 86, 34, 0.15);
-  user-select: none;
 }
 .caption__text {
   font-family: "Inconsolata", sans-serif;

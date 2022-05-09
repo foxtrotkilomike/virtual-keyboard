@@ -23,7 +23,7 @@ export function changeKeyboardLayout(kbd) {
   const keyboard = kbd;
   Object.keys(keyboard.keys).forEach((key) => {
     keyboard.keys[key].element.textContent = keyboard.keys[key].label
-                                            || keyboard.keys[key].value[keyboard.lang];
+                                            || keyboard.keys[key][keyboard.lang].value;
   });
 }
 
@@ -36,7 +36,7 @@ function makeKeyboardRows(kbd) {
 
   Object.keys(keyboard.keys).forEach((key) => {
     const keyElement = Key(key, keyboard.keys[key]);
-    keyElement.textContent = keyboard.keys[key].label || keyboard.keys[key].value[keyboard.lang];
+    keyElement.textContent = keyboard.keys[key].label || keyboard.keys[key][keyboard.lang].value;
     keyboard.keys[key].element = keyElement;
     keyboardRows[keyboard.keys[key].row].append(keyElement);
   });
@@ -65,7 +65,7 @@ export function makePage(keyboard) {
   caption.append(captionText);
 
   const notice = createElement('div', ['caption']);
-  const noticeText = createElement('p', ['caption__text'], "!Notice some function keys or key combinations may trigger your browsers' hot keys (or even OS keys, like 'Win') and hence not highlight keyboard keys");
+  const noticeText = createElement('p', ['caption__text'], "!Notice some function keys or key combinations may trigger your browsers' hot keys (or even OS keys, like 'Win') and hence not highlight keyboard keys. In this case click anywhere on page and try again");
   notice.append(noticeText);
 
   keyboardRowsWrapper.append(...keyboardRows);
