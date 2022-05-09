@@ -60,6 +60,7 @@ a {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
+  user-select: none;
 }
 
 .textarea {
@@ -269,6 +270,8 @@ a {
   border-radius: 10px;
   background-color: rgba(255, 86, 34, 0.15);
 
+  user-select: none;
+
   &__text {
     font-family: $main-font, sans-serif;
     font-size: 20px;
@@ -282,5 +285,3 @@ code {
   color: #ff6d88;
   background-color: rgba(251, 221, 212, 1);
 }
-
-// sass --watch src/styles/style.scss src/styles/style.css

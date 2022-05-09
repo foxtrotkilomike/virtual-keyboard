@@ -1,6 +1,6 @@
 export class Keyboard {
-  constructor(lang) {
-    this.lang = lang;
+  constructor(language) {
+    this.lang = language;
   }
 
   keys = {
@@ -723,6 +723,7 @@ export class Keyboard {
 
 export function Key(code, keyObj) {
   const classList = ['keyboard__key'];
+  let id = '';
   if (keyObj.label) {
     classList.push('keyboard__key--special');
   }
@@ -733,6 +734,10 @@ export function Key(code, keyObj) {
       break;
 
     case 'Tab':
+      id = 'tab';
+      classList.push('keyboard__key--tab');
+      break;
+
     case 'CapsLock':
     case 'Win':
       classList.push('keyboard__key--tab');
@@ -769,9 +774,19 @@ export function Key(code, keyObj) {
       break;
 
     case 'ArrowUp':
+      id = 'arr_up';
+      classList.push('keyboard__key--arr');
+      break;
     case 'ArrowDown':
+      id = 'arr_down';
+      classList.push('keyboard__key--arr');
+      break;
     case 'ArrowRight':
+      id = 'arr_right';
+      classList.push('keyboard__key--arr');
+      break;
     case 'ArrowLeft':
+      id = 'arr_left';
       classList.push('keyboard__key--arr');
       break;
 
@@ -781,5 +796,8 @@ export function Key(code, keyObj) {
 
   const key = document.createElement('button');
   key.classList.add(...classList);
+  if (id) {
+    key.id = id;
+  }
   return key;
 }

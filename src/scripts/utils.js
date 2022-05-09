@@ -19,14 +19,16 @@ export function createElement(type, className, textContent, attributes) {
   return element;
 }
 
-export function changeKeyboardLayout(keyboard) {
+export function changeKeyboardLayout(kbd) {
+  const keyboard = kbd;
   Object.keys(keyboard.keys).forEach((key) => {
     keyboard.keys[key].element.textContent = keyboard.keys[key].label
                                             || keyboard.keys[key].value[keyboard.lang];
   });
 }
 
-function makeKeyboardRows(keyboard) {
+function makeKeyboardRows(kbd) {
+  const keyboard = kbd;
   const keyboardRows = [];
   for (let i = 0; i < 5; i += 1) {
     keyboardRows.push(createElement('div', ['keyboard__row']));
@@ -59,15 +61,19 @@ export function makePage(keyboard) {
   const caption = createElement('div', ['caption']);
   const captionText = createElement('p', ['caption__text']);
   const captionCode = createElement('code', [], 'Alt + Shift');
-  captionText.append('Use ', captionCode, ' to change language');
+  captionText.append('Use ', captionCode, ' to change layout');
   caption.append(captionText);
+
+  const notice = createElement('div', ['caption']);
+  const noticeText = createElement('p', ['caption__text'], "!Notice some function keys or key combinations may trigger your browsers' hot keys (or even OS keys, like 'Win') and hence not highlight keyboard keys");
+  notice.append(noticeText);
 
   keyboardRowsWrapper.append(...keyboardRows);
   keyboardContainer.append(keyboardRowsWrapper);
 
   textareaContainer.append(textarea, resetButton);
 
-  container.append(prompt, textareaContainer, keyboardContainer, caption);
+  container.append(prompt, textareaContainer, keyboardContainer, caption, notice);
   wrapper.append(container);
   document.body.prepend(wrapper);
 }

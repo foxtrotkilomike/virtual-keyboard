@@ -448,6 +448,7 @@ a {
   font-size: 32px;
   font-weight: 600;
   text-align: center;
+  user-select: none;
 }
 
 .textarea__container {
@@ -610,6 +611,7 @@ a {
   padding: 20px;
   border-radius: 10px;
   background-color: rgba(255, 86, 34, 0.15);
+  user-select: none;
 }
 .caption__text {
   font-family: "Inconsolata", sans-serif;

@@ -1,67 +1,257 @@
-import { makePage } from './utils.js';
+import { makePage, changeKeyboardLayout } from './utils.js';
 import { Keyboard } from './keyboard.js';
 
-// let lang = window.localStorage.getItem("lang")
-// ? window.localStorage.getItem("lang")
-// : window.localStorage.setItem("lang", 'en');
+const language = window.localStorage.getItem('lang')
+  ? window.localStorage.getItem('lang')
+  : window.localStorage.setItem('lang', 'en');
 
-const lang = 'en';
+const keyboard = new Keyboard(language);
+let resetButtonElem;
+let textareaElem;
+const keysPressed = {};
 
-const keyboard = new Keyboard(lang);
+function addListenersRealKeys(textarea) {
+  document.addEventListener('keydown', (evt) => {
+    // highlight keys on virtual keyboard
+    if (keyboard.keys[`${evt.code}`]) {
+      textarea.focus();
+      keyboard.keys[`${evt.code}`].element.classList.add('keyboard__key--highlight');
+    }
+
+    // handle Tab
+    if (evt.code === 'Tab') {
+      evt.preventDefault();
+    }
+
+    // handle CapsLock
+    if (evt.code === 'CapsLock') {
+      if (!evt.repeat) {
+        keyboard.keys.CapsLock.element.classList.toggle('keyboard__key--toggled');
+
+        Object.keys(keyboard.keys).forEach((key) => {
+          if (key.match(/^Key/)) {
+            const { lang } = keyboard;
+            if (!keyboard.keys[key].shifted) {
+              keyboard.keys[key].shifted = true;
+              keyboard.keys[key].element.textContent = keyboard.keys[key].shiftedValue[lang];
+            } else {
+              keyboard.keys[key].shifted = false;
+              keyboard.keys[key].element.textContent = keyboard.keys[key].value[lang];
+            }
+          }
+        });
+      }
+    }
+
+    // handle Shift
+    if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
+      if (!evt.repeat) {
+        Object.keys(keyboard.keys).forEach((key) => {
+          if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
+            keyboard.keys[key].shifted = keyboard.keys[key].shifted !== true;
+
+            if (!keyboard.keys[key].shifted) {
+              keyboard.keys[key].element.textContent = keyboard.keys[key]
+                .value[keyboard.lang];
+            } else {
+              keyboard.keys[key].element.textContent = keyboard.keys[key]
+                .shiftedValue[keyboard.lang];
+            }
+          }
+        });
+      }
+    }
+
+    // handle layout change
+    keysPressed[`${evt.code}`] = true;
+    if ((keysPressed.ShiftLeft || keysPressed.ShiftRight)
+        && (keysPressed.AltLeft || keysPressed.AltRight)) {
+      keyboard.lang = (keyboard.lang === 'en') ? 'ru' : 'en';
+      window.localStorage.setItem('lang', keyboard.lang);
+      changeKeyboardLayout(keyboard);
+    }
+  });
+
+  document.addEventListener('keyup', (evt) => {
+    // highlight keys on virtual keyboard
+    if (keyboard.keys[`${evt.code}`]) {
+      keyboard.keys[`${evt.code}`].element.classList.remove('keyboard__key--highlight');
+    }
+
+    // handle Shift
+    if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
+      Object.keys(keyboard.keys).forEach((key) => {
+        if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
+          keyboard.keys[key].shifted = keyboard.keys[key].shifted !== true;
+
+          if (!keyboard.keys[key].shifted) {
+            keyboard.keys[key].element.textContent = keyboard.keys[key]
+              .value[keyboard.lang];
+          } else {
+            keyboard.keys[key].element.textContent = keyboard.keys[key]
+              .shiftedValue[keyboard.lang];
+          }
+        }
+      });
+    }
+
+    keysPressed[`${evt.code}`] = false;
+  });
+}
+
+function addListenersVirtualKeys(resetButtonEl, textareaEl) {
+  const textarea = textareaEl;
+  const resetButton = resetButtonEl;
+
+  Object.keys(keyboard.keys).forEach((key) => {
+    let callback;
+
+    switch (key) {
+      case 'Backspace':
+        callback = () => {
+          textarea.focus();
+          textarea.value = textarea.value.slice(0, -1);
+        };
+        break;
+
+      case 'Tab':
+        callback = (evt) => {
+          evt.preventDefault();
+          textarea.focus();
+          textarea.value += '\t';
+        };
+        break;
+
+      case 'Delete':
+        callback = () => {
+          textarea.focus();
+          const substringBefore = textarea.value.slice(0, textarea.selectionStart);
+          const substringAfter = textarea.value.slice(textarea.selectionStart + 1);
+          textarea.value = substringBefore.concat(substringAfter);
+          textarea.selectionEnd -= substringAfter.length;
+        };
+        break;
+
+      case 'CapsLock':
+        callback = () => {
+          keyboard.keys.CapsLock.element.classList.toggle('keyboard__key--toggled');
+
+          Object.keys(keyboard.keys).forEach((keyName) => {
+            if (keyName.match(/^Key/)) {
+              const { lang } = keyboard;
+              if (!keyboard.keys[keyName].shifted) {
+                keyboard.keys[keyName].shifted = true;
+                keyboard.keys[keyName].element.textContent = keyboard.keys[keyName]
+                  .shiftedValue[lang];
+              } else {
+                keyboard.keys[keyName].shifted = false;
+                keyboard.keys[keyName].element.textContent = keyboard.keys[keyName].value[lang];
+              }
+            }
+          });
+        };
+        break;
+
+      case 'Enter':
+        callback = () => {
+          textarea.focus();
+          textarea.value += '\n';
+        };
+        break;
+
+      case 'ShiftLeft':
+      case 'ShiftRight':
+        keyboard.keys[key].element.addEventListener('mousedown', () => {
+          Object.keys(keyboard.keys).forEach((keyName) => {
+            if (keyboard.keys[keyName].element.classList.contains('keyboard__key--standard')) {
+              keyboard.keys[keyName].element.textContent = keyboard.keys[keyName]
+                .shiftedValue[keyboard.lang];
+            }
+          });
+        });
+
+        keyboard.keys[key].element.addEventListener('mouseup', () => {
+          Object.keys(keyboard.keys).forEach((keyName) => {
+            if (keyboard.keys[keyName].element.classList.contains('keyboard__key--standard')) {
+              if (!keyboard.keys[keyName].shifted) {
+                keyboard.keys[keyName].element.textContent = keyboard.keys[keyName]
+                  .value[keyboard.lang];
+              }
+            }
+          });
+        });
+        break;
+
+      case 'Win':
+        callback = () => {
+          textarea.focus();
+          textarea.value += 'Congrats, you won!:)';
+        };
+        break;
+
+      case 'Space':
+        callback = () => {
+          textarea.focus();
+          textarea.value += ' ';
+        };
+        break;
+
+      case 'ArrowUp':
+        callback = () => {
+          textarea.focus();
+          textarea.selectionEnd -= textarea.textLength;
+        };
+        break;
+
+      case 'ArrowDown':
+        callback = () => {
+          textarea.focus();
+          textarea.selectionStart += textarea.textLength;
+        };
+        break;
+
+      case 'ArrowRight':
+        callback = () => {
+          textarea.focus();
+          textarea.selectionStart += 1;
+        };
+        break;
+
+      case 'ArrowLeft':
+        callback = () => {
+          textarea.focus();
+          textarea.selectionEnd -= 1;
+        };
+        break;
+
+      default:
+        if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
+          callback = () => {
+            textarea.focus();
+            if (keyboard.keys[key].shifted) {
+              textarea.value += keyboard.keys[key].shiftedValue[keyboard.lang];
+            } else {
+              textarea.value += keyboard.keys[key].value[keyboard.lang];
+            }
+          };
+        }
+    }
+
+    if (callback) {
+      keyboard.keys[key].element.addEventListener('click', (evt) => { callback(evt); });
+    }
+  });
+
+  resetButton.addEventListener('click', () => {
+    textarea.value = '';
+  });
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   makePage(keyboard);
-});
+  resetButtonElem = document.querySelector('.button__reset');
+  textareaElem = document.querySelector('#textarea');
 
-// highlight keys on virtual keyboard
-document.addEventListener('keydown', (evt) => {
-  if (keyboard.keys[`${evt.code}`]) {
-    keyboard.keys[`${evt.code}`].element.classList.add('keyboard__key--highlight');
-  }
-});
-
-document.addEventListener('keyup', (evt) => {
-  if (keyboard.keys[`${evt.code}`]) {
-    keyboard.keys[`${evt.code}`].element.classList.remove('keyboard__key--highlight');
-  }
-});
-
-// handle CapsLock
-document.addEventListener('keydown', (evt) => {
-  if (evt.code === 'CapsLock') {
-    keyboard.keys.CapsLock.element.classList.toggle('keyboard__key--toggled');
-
-    Object.keys(keyboard.keys).forEach((key) => {
-      if (key.match(/^Key/)) {
-        if (!keyboard.keys[key].shifted) {
-          keyboard.keys[key].shifted = true;
-          keyboard.keys[key].element.textContent = keyboard.keys[key].shiftedValue[lang];
-        } else {
-          keyboard.keys[key].shifted = false;
-          keyboard.keys[key].element.textContent = keyboard.keys[key].value[lang];
-        }
-      }
-    });
-  }
-});
-
-// handle Shift
-document.addEventListener('keydown', (evt) => {
-  if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
-    Object.keys(keyboard.keys).forEach((key) => {
-      if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
-        keyboard.keys[key].element.textContent = keyboard.keys[key].shiftedValue[lang];
-      }
-    });
-  }
-});
-
-document.addEventListener('keyup', (evt) => {
-  if (evt.code === 'ShiftLeft' || evt.code === 'ShiftRight') {
-    Object.keys(keyboard.keys).forEach((key) => {
-      if (keyboard.keys[key].element.classList.contains('keyboard__key--standard')) {
-        keyboard.keys[key].element.textContent = keyboard.keys[key].value[lang];
-      }
-    });
-  }
+  addListenersVirtualKeys(resetButtonElem, textareaElem);
+  addListenersRealKeys(textareaElem);
 });
