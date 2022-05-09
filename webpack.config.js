@@ -10,7 +10,9 @@ const config = {
   entry: './src/scripts/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
+    clean: {
+      keep: /\.git/,
+    },
   },
   devServer: {
     open: true,
