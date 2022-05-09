@@ -2,9 +2,13 @@ import { makePage, changeKeyboardLayout } from './utils.js';
 import { Keyboard } from './keyboard.js';
 import '../styles/style.scss';
 
-const language = window.localStorage.getItem('lang')
-  ? window.localStorage.getItem('lang')
-  : window.localStorage.setItem('lang', 'ru');
+let language;
+if (window.localStorage.getItem('lang')) {
+  language = window.localStorage.getItem('lang');
+} else {
+  language = 'ru';
+  window.localStorage.setItem('lang', language);
+}
 
 const keyboard = new Keyboard(language);
 let resetButtonElem;
